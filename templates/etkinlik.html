@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .body {
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul a {
+            padding: 5px 10px;
+            color: #FFFFFF;
+            font-size: 18px;
+        }
+
+        ul a:hover {
+            text-decoration: none;
+            color: #31231E;
+        }
+
+        .bg-1 {
+            background-color: #5A3A31;
+        }
+
+        .bg-2 {
+            background-color: #E3D888;
+        }
+
+        .h-1 {
+            height: 100vh;
+        }
+
+        .c-1 {
+            color: #FFFFFF;
+        }
+
+        h2 {
+            background: #31231E;
+            float:left;
+            clear:left;
+            width: 100%;
+        }
+    </style>
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="body">
+        <div class="col-md-12">
+            <div class="row">
+            <div class="col-md-2 bg-1 h-1 c-1 pl-0 pr-0">
+                <h2 class="p-4">YÖNETİM PANELİ</h2>
+                <ul class="mt-4">
+                    <a href="index.html"><li>Duyuru İşlemleri</li></a>
+                    <a href="#"><li>Ders Programı İşlemleri</li></a>
+                    <a href="etkinlik.html"><li>Etkinlik Programı İşlemleri</li></a>
+                    <a href="#"><li>Slayt İşlemleri</li></a>
+                </ul>
+            </div>
+            <div class="col-md-10 bg-2 h-2">
+                <div class="col-md-10 d-flex justify-content-center">
+                    <div class="col-md-8">
+                            <h3 class="mt-4">ETKİNLİK</h3>
+                            <form>
+                                    <div class="form-group">
+                                      <label for="formGroupExampleInput">Etkinlik Adı</label>
+                                      <input type="text" class="form-control" id="formGroupExampleInput">
+                                      <label for="formGroupExampleInput">Etkinlik İçeriği</label>
+                                      <input type="text" class="form-control" id="formGroupExampleInput">
+                                      <label for="formGroupExampleInput">Etkinlik Tarihi</label>
+                                      <input type="text" class="form-control" id="formGroupExampleInput">
+                                      <label for="formGroupExampleInput">Etkinlik Yeri</label>
+                                      <input type="text" class="form-control" id="formGroupExampleInput">
+                                    </div>
+                                    <input type="submit" value="ekle">
+                            </form>
+                            <h5 class="mt-4">Aktif Etkinkikler</h5>
+                            <table class="table">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Etkinlik Adı</th>
+                                        <th scope="col">Etkinlik İçeriği</th>
+                                        <th scope="col">Etkinlik Tarihi</th>
+                                        <th scope="col">Etkinlik Yeri</th>
+                                        <th scope="col">İşlemler</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Mark</td>
+                                        <td>Mark</td>
+                                        <td>Mark</td>
+                                        <td>sil | düzenle</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
