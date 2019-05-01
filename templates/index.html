@@ -12,11 +12,11 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Karadeniz Teknik Üniversitesi</title>
   </head>
   <body>
       <div id="topbar">
-        <marquee>DUYURU 1 &nbsp;&nbsp; | &nbsp;&nbsp; DUYURU 2 &nbsp;&nbsp; |&nbsp;&nbsp;  DUYURU 3 &nbsp;&nbsp; | &nbsp;&nbsp; DUYURU 4</marquee>
+        <marquee>{% for item in duyuru %} &nbsp;&nbsp;{{item.duyuru_icerik}} | {% endfor %} </marquee>
       </div>
       <div class="container">
           <div class="row mt-4">
@@ -64,30 +64,18 @@
                                     <h4 class="mb-1">Program</h4>
                                   </div>
                                 </a>
+
+                                {% for etkinlik in etkinlik %}
                               <a href="#" class="list-group-item list-group-item-action active">
                                 <div class="d-flex w-100 justify-content-between">
-                                  <h5 class="mb-1">Kariyer Fuarı</h5>
-                                  <small>24.03.2018</small>
+                                  <h5 class="mb-1">{{etkinlik.etkinlik_baslik}}</h5>
+                                  <small>{{etkinlik.etkinlik_tarih}}</small>
                                 </div>
-                                <p class="mb-1">Ülkemizin çeşitli yerlerinden katılımcı firmalar, öğrencilere bilgi verecek.</p>
-                                <small>Şenol Güneş Spor Kompleksi</small>
+                                <p class="mb-1">{{etkinlik.etkinlik_icerik}}</p>
+                                <small>{{etkinlik.etkinlik_konum}}</small>
                               </a>
-                              <a href="#" class="list-group-item list-group-item-action">
-                                <div class="d-flex w-100 justify-content-between">
-                                  <h5 class="mb-1">List group item heading</h5>
-                                  <small class="text-muted">3 days ago</small>
-                                </div>
-                                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                                <small class="text-muted">Donec id elit non mi porta.</small>
-                              </a>
-                              <a href="#" class="list-group-item list-group-item-action">
-                                <div class="d-flex w-100 justify-content-between">
-                                  <h5 class="mb-1">List group item heading</h5>
-                                  <small class="text-muted">3 days ago</small>
-                                </div>
-                                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                                <small class="text-muted">Donec id elit non mi porta.</small>
-                              </a>
+                              {% endfor %}
+                              
                             </div>
                         </div>   
                   </div>

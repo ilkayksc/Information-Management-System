@@ -70,50 +70,25 @@
             </div>
             <div class="col-md-10 bg-2 h-2">
                 <div class="col-md-10 d-flex justify-content-center">
-                    <div class="col-md-10">
+                    <div class="col-md-8">
                             <h3 class="mt-4">ETKİNLİK</h3>
-                            <form action="/etkinlikekleme" method="POST">
+                            <form action="{{url_for('etkinlikduzenleme') }}" method="POST">
                                     <div class="form-group">
                                       <label for="formGroupExampleInput">Etkinlik Adı</label>
-                                      <input type="text" class="form-control" name="etkinlik_baslik" id="formGroupExampleInput">
+
+                                      <input type="text" class="form-control" name="etkinlik_baslik" id="formGroupExampleInput" value="{{ sonuc.etkinlik_baslik }}">
                                       <label for="formGroupExampleInput">Etkinlik İçeriği</label>
-                                      <input type="text" class="form-control" name="etkinlik_icerik" id="formGroupExampleInput">
+                                      <input type="text" class="form-control" name="etkinlik_icerik" id="formGroupExampleInput" value="{{ sonuc.etkinlik_icerik }}">
                                       <label for="formGroupExampleInput">Etkinlik Tarihi</label>
-                                      <input type="text" class="form-control" name="etkinlik_tarihi" id="formGroupExampleInput">
+                                      <input type="text" class="form-control" name="etkinlik_tarihi" id="formGroupExampleInput" value="{{ sonuc.etkinlik_tarih }}">
                                       <label for="formGroupExampleInput">Etkinlik Yeri</label>
-                                      <input type="text" class="form-control" name="etkinlik_konum" id="formGroupExampleInput">
+                                      <input type="text" class="form-control" name="etkinlik_konum" id="formGroupExampleInput" value="{{ sonuc.etkinlik_konum }}">
+
+                                      <input type="hidden" class="form-control" name="etkinlik_id" id="formGroupExampleInput" value="{{ sonuc.etkinlik_id }}">
                                     </div>
-                                    <input type="submit" value="ekle">
+                                    <input type="submit" class="btn btn-success" value="Düzenle">
                             </form>
-                            <h5 class="mt-4">Aktif Etkinlikler</h5>
-                            <table class="table">
-                                    <thead>
-                                      <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Etkinlik Adı</th>
-                                        <th scope="col">Etkinlik İçeriği</th>
-                                        <th scope="col" style="width: 135px;">Etkinlik Tarihi</th>
-                                        <th scope="col" style="width: 160px;">Etkinlik Yeri</th>
-                                        <th scope="col" style="width: 180px;">İşlemler</th>
-                                      </tr>
-                                    </thead>
-                                    <tbody>
-                                        {% for item in result %}
-                                        <tr>
-                                           
-                                           <td>{{item.etkinlik_id}}</td>
-                                           <td>{{item.etkinlik_baslik}}</td>
-                                           <td>{{item.etkinlik_icerik}}</td>
-                                           <td>{{item.etkinlik_tarih}}</td>
-                                           <td>{{item.etkinlik_konum}}</td>
-                                           
-                                           <td style="width: 80px;float: left; margin-right: 20px;"><a href="{{url_for('etkinlikbilgileri',   numara = item.etkinlik_id) }}"><button width="80" class="btn btn-success ">Duzenle</button></a></td>
-                                           <td style="width: 80px;float: left;"><a href="{{url_for('etkinliksil',   numara = item.etkinlik_id) }}"><button width="80" class="btn btn-danger ">Sil</button></a></td>
-                                           
-                                            </tr>
-                                          {% endfor %}
-                                    </tbody>
-                                  </table>
+                            
                     </div>
                 </div>
             </div>

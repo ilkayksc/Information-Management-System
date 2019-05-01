@@ -53,7 +53,7 @@
             width: 100%;
         }
     </style>
-    <title>Hello, world!</title>
+    <title>Karadeniz Teknik Üniversitesi</title>
   </head>
   <body>
     <div class="body">
@@ -64,7 +64,7 @@
                 <ul class="mt-4">
                     <a href="index.html"><li>Duyuru İşlemleri</li></a>
                     <a href="#"><li>Ders Programı İşlemleri</li></a>
-                    <a href="etkinlik.html"><li>Etkinlik Programı İşlemleri</li></a>
+                    <a href="etkinlik"><li>Etkinlik Programı İşlemleri</li></a>
                     <a href="#"><li>Slayt İşlemleri</li></a>
                 </ul>
             </div>
@@ -72,10 +72,10 @@
                 <div class="col-md-10 d-flex justify-content-center">
                     <div class="col-md-8">
                             <h3 class="mt-4">DUYURULAR</h3>
-                            <form>
+                            <form action="/duyuruekleme" method="POST">
                                     <div class="form-group">
                                       <label for="formGroupExampleInput">Duyuru</label>
-                                      <input type="text" class="form-control" id="formGroupExampleInput">
+                                      <input type="text" class="form-control" name="duyuru_icerik" id="formGroupExampleInput">
                                     </div>
                                     <input type="submit" value="ekle">
                             </form>
@@ -84,26 +84,24 @@
                                     <thead>
                                       <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col">Duyuru</th>
+                                        <th scope="col">Duyuru İçeriği</th>
                                         <th scope="col">İşlemler</th>
                                       </tr>
                                     </thead>
                                     <tbody>
+                                        
+                                        
+                                      {% for item in result %}
                                       <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>sil | düzenle</td>
-                                      </tr>
-                                      <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>@fat</td>
-                                      </tr>
-                                      <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry</td>
-                                        <td>@twitter</td>
-                                      </tr>
+                                         
+                                         <td>{{item.duyuru_id}}</td>
+                                         <td>{{item.duyuru_icerik}}</td>
+                                         
+                                         
+                                         <td style="width: 80px;float: left;"><a href="{{url_for('duyurusil',   numara = item.duyuru_id) }}"><button width="80" class="btn btn-danger ">Sil</button></a></td>
+                                         
+                                          </tr>
+                                        {% endfor %}
                                     </tbody>
                                   </table>
                     </div>
